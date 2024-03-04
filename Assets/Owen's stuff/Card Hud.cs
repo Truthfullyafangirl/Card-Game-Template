@@ -33,13 +33,11 @@ public class CardHud : MonoBehaviour
     void Start()
     {
         health = 10;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         HealthText.text = "Health " + health; 
     }
 }
