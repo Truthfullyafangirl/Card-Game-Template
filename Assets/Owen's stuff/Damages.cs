@@ -39,7 +39,7 @@ public class Damages : MonoBehaviour
         if (health <=0 )
         {
             // Switch to the next scene
-            SceneManager.LoadScene("Title screen");
+            SceneManager.LoadScene("You lost");
         }
 
     }
