@@ -19,12 +19,13 @@ public class Damages : MonoBehaviour
        // if (("combat"))
       //  {
       //      ChangeHealth(-1);
-      //  }
+      //  } 
         
       //   if ("health")) 
       //  {
       //      ChangeHealth( +1);
       //      other.gameObject.SetActive(false);
+        
       
     
       if (health <=0 )
