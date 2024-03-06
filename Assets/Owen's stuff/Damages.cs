@@ -19,7 +19,7 @@ public class Damages : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
+
         //if(sheild card is clicked )
         {
             combat = false;
@@ -44,25 +44,7 @@ public class Damages : MonoBehaviour
 
     }
         
-=======
-       // if (("combat"))
-      //  {
-      //      ChangeHealth(-1);
-      //  } 
-        
-      //   if ("health")) 
-      //  {
-      //      ChangeHealth( +1);
-      //      other.gameObject.SetActive(false);
-        
-      
-    
-      if (health <=0 )
-      {
-          // Switch to the next scene
-          SceneManager.LoadScene("Title screen");
-      }
->>>>>>> b66b8a022703537b5e4b7687557bef4db3552b6b
+
     
 
 
