@@ -19,7 +19,6 @@ public class Titlebutton : MonoBehaviour
     
     public void OnMouseDown()
     {
-        Debug.Log("Works");
         SceneManager.LoadScene("Main Game");
     }
 }
