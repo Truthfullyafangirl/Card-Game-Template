@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Damages : MonoBehaviour
+
 {
     public static CardHud hud;
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +26,15 @@ public class Damages : MonoBehaviour
       //      ChangeHealth( +1);
       //      other.gameObject.SetActive(false);
       
+    
+      if (health <=0 )
+      {
+          // Switch to the next scene
+          SceneManager.LoadScene("Title screen");
+      }
+    
+    
+    
     }
 }
+
