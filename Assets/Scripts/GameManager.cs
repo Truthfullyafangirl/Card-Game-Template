@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
-
+        //player_hand.Add(deck. );
     }
 
     void Shuffle()
