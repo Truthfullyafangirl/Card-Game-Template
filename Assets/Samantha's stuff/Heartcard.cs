@@ -20,7 +20,7 @@ public class Heartcard : MonoBehaviour
 
    public void OnMouseDown()
     {
-        heal = true; 
         Debug.Log("Success"); 
+        heal = true; 
     }
 }
