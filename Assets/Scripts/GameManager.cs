@@ -48,7 +48,12 @@ public class GameManager : MonoBehaviour
 
     void AI_Turn()
     {
-
+        for (int i = 0; i < 3; i++)
+        {
+            int rand = Random.Range(0, ai_deck.Count);
+            ai_hand[i] = ai_deck[rand];
+            ai_deck.RemoveAt(rand);
+        }
     }
 
 
