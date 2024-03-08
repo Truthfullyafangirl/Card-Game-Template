@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Shuffle();
     }
 
     // Update is called once per frame
@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
-
+Shuffle();
+//player_hand.Add(deck.);
     }
 
     void Shuffle()
