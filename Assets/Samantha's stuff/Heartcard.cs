@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Heartcard : MonoBehaviour
 {
-    public var heal; 
+    //public var heal; 
         
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Heartcard : MonoBehaviour
 
     void OnMouseDown()
     {
-        heal = true; 
+        //heal = true; 
         Debug.Log("Success"); 
     }
 }
