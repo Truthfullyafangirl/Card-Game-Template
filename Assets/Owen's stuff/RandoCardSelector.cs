@@ -9,7 +9,7 @@ public class RandoCardSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SelectAndMoveRandomElement();
     }
 
     // Update is called once per frame
