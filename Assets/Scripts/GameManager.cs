@@ -25,9 +25,11 @@ public class GameManager : MonoBehaviour
         }
     }
     // Start is called before the first frame update
+    
     void Start()
     {
-        SelectAndMoveRandomElement();
+        // SelectAndMoveRandomElement();
+        // The code gave an error
     }
 
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
+    /*
     private void SelectAndMoveRandomElement()
     {
         for (int i = 0; i < 3; i++)
@@ -67,7 +69,8 @@ public class GameManager : MonoBehaviour
             player_deck.RemoveAt(rand);
         }
     }
-    
+     // The code gave an error
+    */
 
     
 }
