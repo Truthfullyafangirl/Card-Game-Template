@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Testcardscript : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,10 @@ public class Testcardscript : MonoBehaviour
     {
         
     }
+
+    public void OnMouseDown()
+    {
+        
+    }
+    
 }
