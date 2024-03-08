@@ -20,6 +20,6 @@ public class Failbutton : MonoBehaviour
     
     public void OnMouseDown()
     {
-        SceneManager.LoadScene("Title Screen");
+        SceneManager.LoadScene("Title screen");
     }
 }
