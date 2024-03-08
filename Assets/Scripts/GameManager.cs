@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public List<Card> player_hand = new List<Card>();
     public List<Card> ai_hand = new List<Card>();
     public List<Card> discard_pile = new List<Card>();
-
+    
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SelectAndMoveRandomElement();
     }
 
     // Update is called once per frame
@@ -52,6 +52,17 @@ public class GameManager : MonoBehaviour
     }
 
 
+    
+    private void SelectAndMoveRandomElement()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            int rand = Random.Range(0, player_deck.Count);
+            player_hand[i] = player_deck[rand];
+            player_deck.RemoveAt(rand);
+        }
+    }
+    
 
     
 }
