@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class GameManager : MonoBehaviour
     public List<Card> discard_pile = new List<Card>();
     public float card_size;
     public Transform _cavas;
+
+    public int health; 
+    
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -71,7 +76,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    void PlayCard(Card card)
+    {
+        health += card.data.health;
+    }
+
+
     void Shuffle()
     {
 
@@ -96,5 +106,8 @@ public class GameManager : MonoBehaviour
      // The code gave an error
     */
 
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
+    }
 }

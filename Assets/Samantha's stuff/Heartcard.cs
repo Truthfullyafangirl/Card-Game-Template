@@ -5,15 +5,15 @@ using UnityEngine;
 public class Heartcard : MonoBehaviour
 {
     public bool heal;
-    public Damages damagesScript;
-    public int currentHealth; 
+    //public Damages damagesScript;
+    //public int currentHealth; 
         
     // Start is called before the first frame update
     void Start()
     {
         heal = false;
-        damagesScript = GetComponent<Damages>(); 
-        int currentHealth = damagesScript.health;
+        //damagesScript = GetComponent<Damages>(); 
+        //int currentHealth = damagesScript.health;
     }
 
     // Update is called once per frame
