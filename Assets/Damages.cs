@@ -7,7 +7,7 @@ public class Damages : MonoBehaviour
 
 {
     public static CardHud hud;
-    public int health;
+    public int health = 10; 
 
     public bool combat;
     // Start is called before the first frame update

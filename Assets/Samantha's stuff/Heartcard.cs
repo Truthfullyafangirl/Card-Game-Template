@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Heartcard : MonoBehaviour
 {
-    public bool heal;  
+    public bool heal;
+    public Damages damagesScript;
+    public int currentHealth; 
         
     // Start is called before the first frame update
     void Start()
     {
-        
+        heal = false;
+        damagesScript = GetComponent<Damages>(); 
+        int currentHealth = damagesScript.health;
     }
 
     // Update is called once per frame
     void Update()
     {
-        heal = false; 
+       
     }
 
    public void OnMouseDown()
@@ -23,4 +27,11 @@ public class Heartcard : MonoBehaviour
         Debug.Log("Success"); 
         heal = true; 
     }
+
+   public void EndOfTurn()
+   {
+       heal = false; 
+   }
+   
+   
 }
