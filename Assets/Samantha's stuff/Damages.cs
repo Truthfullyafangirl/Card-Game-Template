@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class Damages : MonoBehaviour
 
 {
-    public static CardHud hud;
-    //public int health = 10; 
-
+    public CardHud hud;
     public bool combat;
+
+    public int health = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +20,15 @@ public class Damages : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //if(sheild card is clicked )
+        health = hud.health;
+        
+        //if(shield card is clicked )
         {
             combat = false;
         }
         //else if (sword card is clicked)
         {
-            combat = true;
+            combat = true; 
         }
         //if (combat = true || end of turn )
         {
