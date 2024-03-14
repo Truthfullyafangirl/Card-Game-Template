@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card_name: 
   description: 
-  health: 1
+  health: 0
   damage: 0
   sprite: {fileID: 0}
