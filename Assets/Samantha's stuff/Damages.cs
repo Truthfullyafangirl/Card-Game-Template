@@ -7,7 +7,7 @@ public class Damages : MonoBehaviour
 
 {
     public static CardHud hud;
-    public int health = 10; 
+    //public int health = 10; 
 
     public bool combat;
     // Start is called before the first frame update
@@ -36,9 +36,9 @@ public class Damages : MonoBehaviour
         {
       //      health(+1);
         }
-        if (health <=0 )
+        //if (health <=0)
         {
-            SceneManager.LoadScene("You lost");
+            //SceneManager.LoadScene("You lost");
         }
 
     }

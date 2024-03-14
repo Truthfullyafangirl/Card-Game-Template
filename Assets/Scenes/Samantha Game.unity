@@ -157,7 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7c4e686d834bccadaa05b25873aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   combat: 0
 --- !u!4 &370633753
 Transform:
@@ -439,6 +438,7 @@ MonoBehaviour:
   discard_pile: []
   card_size: 0
   _cavas: {fileID: 0}
+  health: 0
 --- !u!4 &622756966
 Transform:
   m_ObjectHideFlags: 0
@@ -737,8 +737,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: 0
-  damagesScript: {fileID: 0}
-  currentHealth: 0
 --- !u!61 &2057594979
 BoxCollider2D:
   m_ObjectHideFlags: 0
