@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
     public List<Card> player_hand = new List<Card>();
     public List<Card> ai_hand = new List<Card>();
     public List<Card> discard_pile = new List<Card>();
+    public List<Card> ai_chosen = new List<Card>();
     public float card_size;
     public Transform _cavas;
+    
 
     public int health; 
     
@@ -56,7 +58,9 @@ public class GameManager : MonoBehaviour
             int rand = Random.Range(0, ai_deck.Count);
             ai_hand[i] = ai_deck[rand];
             ai_deck.RemoveAt(rand);
-            
+            int secrand = Random.Range(0, ai_hand.Count);
+            ai_chosen[i] = ai_hand[secrand];
+            ai_hand.RemoveAt(secrand);
             
         }
         
