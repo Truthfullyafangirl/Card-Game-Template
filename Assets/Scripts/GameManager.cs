@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
+using UnityEngine.UI; 
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour , IPointerClickHandler 
 {
     public static GameManager gm;
     //public List<Card> deck = new List<Card>();
@@ -45,7 +47,35 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
+        {
+            print("clicked");
+
+
+            PointerEventData pointer = new PointerEventData(EventSystem.current);
+            pointer.position = Input.mousePosition;
+
+            List<RaycastResult> raycastResults = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointer, raycastResults);
+
+            if (raycastResults.Count > 0)
+            {
+                foreach (var go in raycastResults)
+                {
+                    /*if (go.gameObject.transform.parent.name == "Heart card")
+                    {
+                        health += 1;
+                        print(health);
+                    }*/
+
+                    Debug.Log(go.gameObject.transform.parent.name);
+                }
+            }
+        }
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("clicked");
     }
 
     void Deal()

@@ -230,17 +230,17 @@ PrefabInstance:
     - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: data
       value: 
-      objectReference: {fileID: 11400000, guid: db46be09acd6f4649865e48c39463d98, type: 2}
+      objectReference: {fileID: 11400000, guid: f48ff16d149f54154883e745f78a558e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 139944937306382617, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2057594979}
+      addedObject: {fileID: 2057594978}
     - targetCorrespondingSourceObject: {fileID: 139944937306382617, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2057594978}
+      addedObject: {fileID: 2057594981}
   m_SourcePrefab: {fileID: 100100000, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
 --- !u!1001 &454939644
 PrefabInstance:
@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -401,7 +402,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &622756964
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
+--- !u!1 &598229451
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,8 +426,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 622756966}
-  - component: {fileID: 622756965}
+  - component: {fileID: 598229453}
+  - component: {fileID: 598229452}
   m_Layer: 0
   m_Name: Dealer
   m_TagString: Untagged
@@ -418,39 +435,77 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &622756965
+--- !u!114 &598229452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622756964}
+  m_GameObject: {fileID: 598229451}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ee8c48878610400591dbc552a9c8d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player_deck:
+  - {fileID: 4082546155666260891, guid: 48fc642efed94443e95506fd2e49f208, type: 3}
+  - {fileID: 4082546155666260891, guid: 48fc642efed94443e95506fd2e49f208, type: 3}
+  - {fileID: 7465763523394155430, guid: 366e6e565d5e545568d95510c99bab10, type: 3}
+  - {fileID: 7465763523394155430, guid: 366e6e565d5e545568d95510c99bab10, type: 3}
+  ai_deck:
+  - {fileID: 7465763523394155430, guid: 366e6e565d5e545568d95510c99bab10, type: 3}
+  - {fileID: 7465763523394155430, guid: 366e6e565d5e545568d95510c99bab10, type: 3}
+  - {fileID: 4082546155666260891, guid: 48fc642efed94443e95506fd2e49f208, type: 3}
+  - {fileID: 4082546155666260891, guid: 48fc642efed94443e95506fd2e49f208, type: 3}
+  player_hand:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  ai_deck: []
-  player_hand: []
-  ai_hand: []
-  discard_pile: []
-  card_size: 0
+  ai_hand:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  discard_pile:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  card_size: 50
   _cavas: {fileID: 0}
   health: 0
---- !u!4 &622756966
+--- !u!4 &598229453
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622756964}
+  m_GameObject: {fileID: 598229451}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1457.6324, y: 345.7654, z: -20.134266}
+  m_LocalPosition: {x: -300, y: 64.99, z: -20.134266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -925,16 +980,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43bb30df451b40aa8c385b6ee5b18b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heal: 0
---- !u!61 &2057594979
-BoxCollider2D:
+  hud: {fileID: 1088942446}
+  health: 0
+--- !u!65 &2057594981
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057594976}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -943,34 +997,12 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!224 &4002591297304670402
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1083,5 +1115,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1284887786}
   - {fileID: 4002591297304670402}
-  - {fileID: 622756966}
+  - {fileID: 598229453}
   - {fileID: 370633753}
