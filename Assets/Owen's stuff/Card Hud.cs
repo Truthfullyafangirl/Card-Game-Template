@@ -8,10 +8,10 @@ public class CardHud : MonoBehaviour
     
 
     public static CardHud hud;
-    public int coins;
+    public int Ai_Health;
     public int health;
     public TextMeshProUGUI HealthText;
-   
+    public TextMeshProUGUI Ai_HealthText;
     
     // Start is called before the first frame update
 
@@ -33,12 +33,14 @@ public class CardHud : MonoBehaviour
     void Start()
     {
         health = 10;
+        Ai_Health = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        HealthText.text = "Health " + health; 
+        HealthText.text = "Health " + health;
+        Ai_HealthText.text = "Ai Health" + Ai_Health;
     }
 }
 
