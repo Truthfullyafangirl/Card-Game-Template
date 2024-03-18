@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hud: {fileID: 1088942446}
   combat: 0
-  health: 0
+  health: 10
 --- !u!4 &370633753
 Transform:
   m_ObjectHideFlags: 0
@@ -493,9 +493,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  ai_chosen: []
   card_size: 50
   _cavas: {fileID: 0}
   health: 0
+  hud: {fileID: 0}
 --- !u!4 &598229453
 Transform:
   m_ObjectHideFlags: 0
@@ -686,9 +688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bd3a280bcfb4f02a707081fc716441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  Ai_Health: 0
   health: 0
   HealthText: {fileID: 2034446078}
+  Ai_HealthText: {fileID: 0}
 --- !u!1 &1284887783
 GameObject:
   m_ObjectHideFlags: 0

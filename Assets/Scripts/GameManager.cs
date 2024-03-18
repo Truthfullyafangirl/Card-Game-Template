@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public float card_size;
     public Transform _cavas;
     
-
     public int health; 
+    public CardHud hud; 
     
     private void Awake()
     {
@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     void Start()
     {
         card_size = 200;
-            
+        health = 10; 
+        Debug.Log(health);
         Deal();
        
         // SelectAndMoveRandomElement();
@@ -64,11 +65,11 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             {
                 foreach (var go in raycastResults)
                 {
-                    /*if (go.gameObject.transform.parent.name == "Heart card")
+                    if (go.gameObject.transform.parent.name == "Heart card")
                     {
                         health += 1;
                         print(health);
-                    }*/
+                    } 
 
                     Debug.Log(go.gameObject.transform.parent.name);
                 }
@@ -91,7 +92,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             int secrand = Random.Range(0, ai_hand.Count);
             ai_chosen[i] = ai_hand[secrand];
             ai_hand.RemoveAt(secrand);
-            
         }
         
         for (int i = 0; i < 3; i++)
@@ -106,7 +106,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             xOffset += card_size;
             //child to canvas
             deltCard.transform.SetParent(_cavas);
-
         }
     }
 
@@ -126,7 +125,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
         
     }
 
-
     /*
     private void SelectAndMoveRandomElement()
     {
@@ -139,9 +137,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     }
      // The code gave an error
     */
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-    }
+    
+    
+    
 }
