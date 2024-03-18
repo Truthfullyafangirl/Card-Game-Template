@@ -16,15 +16,20 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public List<Card> player_hand = new List<Card>();
     public List<Card> ai_hand = new List<Card>();
     public List<Card> discard_pile = new List<Card>();
-    public List<Card> ai_chosen = new List<Card>();
+    public Card ai_chosen;
     public float card_size;
     public Transform _cavas;
-    
+    float xOffset = 0;
     public int health; 
     public CardHud hud;
     public int aihealth;
+<<<<<<< HEAD
+    public bool playshieldcard; 
+    public Canvas canvas;
+=======
     public bool aiplayshieldcard; 
     
+>>>>>>> 37cc9a88d4105d8a4b05d72736c31c63508519fe
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -108,15 +113,13 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
     void Deal()
     {
-        float xOffset = 0;
+       
         for (int i = 0; i < 3; i++)
         {
             int rand = Random.Range(0, ai_deck.Count);
             ai_hand[i] = ai_deck[rand];
             ai_deck.RemoveAt(rand);
-            int secrand = Random.Range(0, ai_hand.Count);
-            ai_chosen[i] = ai_hand[secrand];
-            ai_hand.RemoveAt(secrand);
+            
         }
         
         for (int i = 0; i < 3; i++)
@@ -147,7 +150,15 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
     void AI_Turn()
     {
+       // Card deltCard =  Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset , transform.position.y, 0),
+            //Quaternion.identity);
+        //deltCard.transform.SetParent(_cavas);
         
+        int secrand = Random.Range(0, ai_hand.Count);
+        ai_chosen = ai_hand[secrand];
+        ai_hand.RemoveAt(secrand);
+        Card dealtCard = Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset, transform.position.y, 0), Quaternion.identity);
+        dealtCard.transform.SetParent(canvas.transform);
     }
 
     /*
