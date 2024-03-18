@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
@@ -20,7 +21,9 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public Transform _cavas;
     
     public int health; 
-    public CardHud hud; 
+    public CardHud hud;
+    public int aihealth;
+    public bool playshieldcard; 
     
     private void Awake()
     {
@@ -39,9 +42,11 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     void Start()
     {
         card_size = 200;
-        health = 10; 
+        health = 10;
+        aihealth = 10;
         Debug.Log(health);
-        Deal();
+        Debug.Log(aihealth);
+        Deal(); 
        
         // SelectAndMoveRandomElement();
         // The code gave an error
@@ -65,12 +70,38 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             {
                 foreach (var go in raycastResults)
                 {
+                    
+                    
+                    
                     if (go.gameObject.transform.parent.name == "Heart card")
                     {
                         health += 1;
                         print(health);
-                    } 
+                    }
 
+                    if (go.gameObject.transform.parent.name == "Shield card")
+                    {
+                        playshieldcard = true; 
+                    }
+                    
+                    if (go.gameObject.transform.parent.name == "Sword card")
+                    {
+                        if (playshieldcard == true)
+                        {
+                            aihealth = aihealth; 
+                        }
+                        
+                        else
+                        {
+                            aihealth = aihealth - 1; 
+                        }
+                        
+                        Debug.Log(aihealth);
+                    }
+                    
+                    
+                    
+                    
                     Debug.Log(go.gameObject.transform.parent.name);
                 }
             }
@@ -105,7 +136,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             //move the next card over
             xOffset += card_size;
             //child to canvas
-            deltCard.transform.SetParent(_cavas);
+            deltCard.transform.SetParent(_cavas); 
         }
     }
 
