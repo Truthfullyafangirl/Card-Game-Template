@@ -20,6 +20,6 @@ public class Shieldcard : MonoBehaviour
     
     void OnMouseDown()
     { 
-        combat.combat = false; 
+        //combat.combat = false; 
     }
 }
