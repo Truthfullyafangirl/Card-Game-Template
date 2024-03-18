@@ -70,9 +70,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             {
                 foreach (var go in raycastResults)
                 {
-                    
-                    
-                    
                     if (go.gameObject.transform.parent.name == "Heart card")
                     {
                         health += 1;
@@ -98,9 +95,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                         
                         Debug.Log(aihealth);
                     }
-                    
-                    
-                    
                     
                     Debug.Log(go.gameObject.transform.parent.name);
                 }
