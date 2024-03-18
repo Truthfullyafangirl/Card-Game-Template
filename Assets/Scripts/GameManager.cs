@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public int health; 
     public CardHud hud;
     public int aihealth;
-    public bool playshieldcard; 
+    public bool aiplayshieldcard; 
     
     private void Awake()
     {
@@ -78,14 +78,14 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
                     if (go.gameObject.transform.parent.name == "Shield card")
                     {
-                        playshieldcard = true; 
+                        //aiplayshieldcard = true; (incorrect)
                     }
                     
                     if (go.gameObject.transform.parent.name == "Sword card")
                     {
-                        if (playshieldcard == true)
+                        if (aiplayshieldcard == true)
                         {
-                            aihealth = aihealth; 
+                            
                         }
                         
                         else
