@@ -23,7 +23,6 @@ public class Heartcard : MonoBehaviour
         {
             Debug.Log("Mouse down");
         }
-            
     }
 
    public void OnMouseDown()
@@ -34,7 +33,7 @@ public class Heartcard : MonoBehaviour
 
    public void EndOfTurn()
    {
-       hud.health = hud.health + 1; 
+       //hud.health = hud.health + 1; 
    }
    
    
