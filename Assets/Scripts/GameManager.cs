@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public int health; 
     public CardHud hud;
     public int aihealth;
-<<<<<<< HEAD
+//<<<<<<< HEAD
     public bool playshieldcard; 
     public Canvas canvas;
-=======
+//=======
     public bool aiplayshieldcard; 
     
->>>>>>> 37cc9a88d4105d8a4b05d72736c31c63508519fe
+//>>>>>>> 37cc9a88d4105d8a4b05d72736c31c63508519fe
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -75,18 +75,21 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             {
                 foreach (var go in raycastResults)
                 {
-                    if (go.gameObject.transform.parent.name == "Heart card")
+                    
+                    print(go.gameObject.name);
+                    
+                    if (go.gameObject.transform.parent.name == "Heart card" && go.gameObject.name == "Background")
                     {
-                        health += 1;
+                        health += 1; 
                         print(health);
                     }
 
-                    if (go.gameObject.transform.parent.name == "Shield card")
+                    if (go.gameObject.transform.parent.name == "Shield card" && go.gameObject.name == "Background")
                     {
-                        //aiplayshieldcard = true; (incorrect)
+                        //aiplayshieldcard = true; (incorrect, this is in us playing the card)
                     }
                     
-                    if (go.gameObject.transform.parent.name == "Sword card")
+                    if (go.gameObject.transform.parent.name == "Sword card" && go.gameObject.name == "Background")
                     {
                         if (aiplayshieldcard == true)
                         {
@@ -95,7 +98,8 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                         
                         else
                         {
-                            aihealth = aihealth - 1; 
+                            aihealth = aihealth - 1;
+                            print(aihealth);
                         }
                         
                         Debug.Log(aihealth);
