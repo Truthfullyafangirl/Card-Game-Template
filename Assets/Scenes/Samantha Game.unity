@@ -493,13 +493,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  ai_chosen: []
+  ai_chosen: {fileID: 0}
   card_size: 50
-  _cavas: {fileID: 0}
+  _canvas: {fileID: 0}
+  xOffset: 0
   health: 0
   hud: {fileID: 0}
   aihealth: 0
+  playshieldcard: 0
   aiplayshieldcard: 0
+  combat: 0
 --- !u!4 &598229453
 Transform:
   m_ObjectHideFlags: 0

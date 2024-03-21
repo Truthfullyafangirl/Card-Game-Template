@@ -67,8 +67,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     void Update()
     {
         
-        health = hud.health;
-        
+        //health = hud.health;
         if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
         {
             print("clicked");
@@ -90,12 +89,15 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                     if (go.gameObject.transform.parent.name == "Heart card" && go.gameObject.name == "Background")
                     {
                         health += 1; 
+                        AI_Turn();
                         print(health);
                     }
 
                     if (go.gameObject.transform.parent.name == "Shield card" && go.gameObject.name == "Background")
                     {
+                        
                         //aiplayshieldcard = true; (incorrect, this is in us playing the card)
+                        AI_Turn();
                     }
                     
                     if (go.gameObject.transform.parent.name == "Sword card" && go.gameObject.name == "Background")
@@ -110,7 +112,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                             aihealth = aihealth - 1;
                             print(aihealth);
                         }
-                        
+                        AI_Turn();
                         Debug.Log(aihealth);
                     }
                     
@@ -118,6 +120,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                 }
             }
         }
+        
         //if(shield card is clicked )
         {
             combat = false;
@@ -146,7 +149,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
     void Deal()
     {
-       
         for (int i = 0; i < 3; i++)
         {
             int rand = Random.Range(0, ai_deck.Count);
@@ -170,9 +172,10 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
         }
     }
 
-    void PlayCard(Card card)
+    void PlayCard()
     {
-        health += card.data.health;
+        
+        
     }
 
 
