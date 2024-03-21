@@ -18,8 +18,9 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public List<Card> discard_pile = new List<Card>();
     public Card ai_chosen;
     public float card_size;
-    public Transform _cavas;
+    public Transform _canvas;
     float xOffset = 0;
+    
     public int health; 
     public CardHud hud;
     public int aihealth;
@@ -28,6 +29,10 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public Canvas canvas;
 //=======
     public bool aiplayshieldcard; 
+    
+   
+    public bool combat;
+    
     
 //>>>>>>> 37cc9a88d4105d8a4b05d72736c31c63508519fe
     private void Awake()
@@ -55,11 +60,15 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
        
         // SelectAndMoveRandomElement();
         // The code gave an error
+        combat = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        health = hud.health;
+        
         if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
         {
             print("clicked");
@@ -109,6 +118,26 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                 }
             }
         }
+        //if(shield card is clicked )
+        {
+            combat = false;
+        }
+        //else if (sword card is clicked)
+        {
+            combat = true; 
+        }
+        //if (combat = true || end of turn )
+        {
+            //       health(-1);
+        }
+        //  if ("healthcard"))
+        {
+            //      health(+1);
+        }
+        //if (health <=0)
+        {
+            //SceneManager.LoadScene("You lost");
+        }
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -137,7 +166,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             //move the next card over
             xOffset += card_size;
             //child to canvas
-            deltCard.transform.SetParent(_cavas); 
+            deltCard.transform.SetParent(_canvas); 
         }
     }
 
