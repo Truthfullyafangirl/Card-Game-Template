@@ -19,14 +19,14 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public Card ai_chosen;
     public float card_size;
     public Transform _canvas;
-    float xOffset = 0;
+    public float xOffset;
     
     public int health; 
     public CardHud hud;
     public int aihealth;
 //<<<<<<< HEAD
     public bool playshieldcard; 
-    public Canvas canvas;
+    
 //=======
     public bool aiplayshieldcard; 
     
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     
     void Start()
     {
-        card_size = 200;
+        card_size = 100;
         health = 10;
         aihealth = 10;
         Debug.Log(health);
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             player_hand[i] = player_deck[playerrand];
             player_deck.RemoveAt(playerrand);
             Card deltCard =  Instantiate(player_hand[i], new Vector3(transform.position.x + xOffset, transform.position.y, 0),
-                Quaternion.identity);
+                Quaternion.identity, _canvas);
             
             //move the next card over
             xOffset += card_size;
@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
         ai_chosen = ai_hand[secrand];
         ai_hand.RemoveAt(secrand);
         Card dealtCard = Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset, transform.position.y, 0), Quaternion.identity);
-        dealtCard.transform.SetParent(canvas.transform);
+        dealtCard.transform.SetParent(_canvas.transform);
     }
 
     /*

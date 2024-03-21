@@ -212,7 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 618613746cb204e9aa08ea7892f11529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combat: {fileID: 0}
 --- !u!61 &298356962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -560,41 +559,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  discard_pile:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  ai_chosen: []
+  discard_pile: []
+  ai_chosen: {fileID: 0}
   card_size: 50
-  _cavas: {fileID: 4002591297304670402}
+  _canvas: {fileID: 4002591297304670402}
+  xOffset: 200
   health: 0
   hud: {fileID: 0}
   aihealth: 0
+  playshieldcard: 0
   aiplayshieldcard: 0
+  combat: 0
 --- !u!4 &622756966
 Transform:
   m_ObjectHideFlags: 0
@@ -983,8 +958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43bb30df451b40aa8c385b6ee5b18b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hud: {fileID: 0}
-  health: 0
 --- !u!1001 &2112503228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1176,5 +1149,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1284887786}
   - {fileID: 4002591297304670402}
-  - {fileID: 622756966}
   - {fileID: 345790375}
+  - {fileID: 622756966}
