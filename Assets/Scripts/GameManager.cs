@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
         // SelectAndMoveRandomElement();
         // The code gave an error
         combat = false;
+        aiplayshieldcard = false; 
     }
 
     // Update is called once per frame
@@ -112,8 +113,10 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                             aihealth = aihealth - 1;
                             print(aihealth);
                         }
+                        
                         AI_Turn();
                         Debug.Log(aihealth);
+                        
                     }
                     
                     Debug.Log(go.gameObject.transform.parent.name);
