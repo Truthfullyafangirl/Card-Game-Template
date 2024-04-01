@@ -6,9 +6,9 @@ using TMPro;
 public class CardHud : MonoBehaviour
 {
     
-
+    
     public static CardHud hud;
-    public int Ai_Health;
+    public int aihealth;
     public int health;
     public TextMeshProUGUI HealthText;
     public TextMeshProUGUI Ai_HealthText;
@@ -33,14 +33,14 @@ public class CardHud : MonoBehaviour
     void Start()
     {
         health = 10;
-        Ai_Health = 10;
+        aihealth = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
         HealthText.text = "Health " + health;
-        Ai_HealthText.text = "Ai Health" + Ai_Health;
+        Ai_HealthText.text = "Ai Health" + aihealth;
     }
 }
 

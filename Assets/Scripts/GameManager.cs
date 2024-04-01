@@ -21,9 +21,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public Transform _canvas;
     public float xOffset;
     
-    public int health; 
     public CardHud hud;
-    public int aihealth;
 //<<<<<<< HEAD
     public bool playshieldcard; 
     
@@ -51,11 +49,12 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     
     void Start()
     {
+        hud = GameObject.FindObjectOfType<CardHud>();
         card_size = 100;
-        health = 10;
-        aihealth = 10;
-        Debug.Log(health);
-        Debug.Log(aihealth);
+        hud.health = 10;
+        hud.aihealth = 10;
+        Debug.Log(hud.health);
+        Debug.Log(hud.aihealth);
         Deal(); 
        
         // SelectAndMoveRandomElement();
@@ -76,7 +75,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
             PointerEventData pointer = new PointerEventData(EventSystem.current);
             pointer.position = Input.mousePosition;
-
             List<RaycastResult> raycastResults = new List<RaycastResult>();
             EventSystem.current.RaycastAll(pointer, raycastResults);
 
@@ -87,21 +85,21 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                     
                     print(go.gameObject.name);
                     
-                    if (go.gameObject.transform.parent.name == "Heart card" && go.gameObject.name == "Background")
+                    if (go.gameObject.transform.parent.name == "Heart card(Clone)" && go.gameObject.name == "Background")
                     {
-                        health += 1; 
+                        hud.health += 1; 
                         AI_Turn();
-                        print(health);
+                        print(hud.health);
                     }
 
-                    if (go.gameObject.transform.parent.name == "Shield card" && go.gameObject.name == "Background")
+                    if (go.gameObject.transform.parent.name == "Shield card(Clone)" && go.gameObject.name == "Background")
                     {
                         
                         //aiplayshieldcard = true; (incorrect, this is in us playing the card)
                         AI_Turn();
                     }
                     
-                    if (go.gameObject.transform.parent.name == "Sword card" && go.gameObject.name == "Background")
+                    if (go.gameObject.transform.parent.name == "Sword card(Clone)" && go.gameObject.name == "Background")
                     {
                         if (aiplayshieldcard == true)
                         {
@@ -110,12 +108,12 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                         
                         else
                         {
-                            aihealth = aihealth - 1;
-                            print(aihealth);
+                            hud.aihealth = hud.aihealth - 1;
+                            print(hud.aihealth);
                         }
                         
                         AI_Turn();
-                        Debug.Log(aihealth);
+                        Debug.Log(hud.aihealth);
                         
                     }
                     
@@ -189,12 +187,14 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
     void AI_Turn()
     {
+        print("Aiturn");
        // Card deltCard =  Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset , transform.position.y, 0),
             //Quaternion.identity);
         //deltCard.transform.SetParent(_cavas);
         
         int secrand = Random.Range(0, ai_hand.Count);
         ai_chosen = ai_hand[secrand];
+        print(ai_chosen.name);
         ai_hand.RemoveAt(secrand);
         Card dealtCard = Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset, transform.position.y, 0), Quaternion.identity);
         dealtCard.transform.SetParent(_canvas.transform);
