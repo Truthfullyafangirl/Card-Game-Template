@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public bool aiplayshieldcard; 
     
    
-    public bool combat;
+    public bool aicombat;
+    public bool combat; 
     
     
 //>>>>>>> 37cc9a88d4105d8a4b05d72736c31c63508519fe
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
        
         // SelectAndMoveRandomElement();
         // The code gave an error
-        combat = false;
+        aicombat = true; 
         aiplayshieldcard = false; 
     }
 
@@ -94,21 +95,17 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
                     if (go.gameObject.transform.parent.name == "Shield card(Clone)" && go.gameObject.name == "Background")
                     {
-                        
-                        //aiplayshieldcard = true; (incorrect, this is in us playing the card)
+                        combat = false; 
                         AI_Turn();
                     }
                     
                     if (go.gameObject.transform.parent.name == "Sword card(Clone)" && go.gameObject.name == "Background")
                     {
-                        if (aiplayshieldcard == true)
-                        {
-                            
-                        }
                         
-                        else
+                        if (aiplayshieldcard == false)
                         {
-                            hud.aihealth = hud.aihealth - 1;
+                            hud.aihealth = hud.aihealth - 2; 
+                            aicombat = true;
                             print(hud.aihealth);
                         }
                         
@@ -121,28 +118,8 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                 }
             }
         }
-        
-        //if(shield card is clicked )
-        {
-            combat = false;
-        }
-        //else if (sword card is clicked)
-        {
-            combat = true; 
-        }
-        //if (combat = true || end of turn )
-        {
-            //       health(-1);
-        }
-        //  if ("healthcard"))
-        {
-            //      health(+1);
-        }
-        //if (health <=0)
-        {
-            //SceneManager.LoadScene("You lost");
-        }
     }
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("clicked");
@@ -176,9 +153,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     void PlayCard()
     {
         
-        
     }
-
 
     void Shuffle()
     {
@@ -188,31 +163,52 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     void AI_Turn()
     {
         print("Aiturn");
-       // Card deltCard =  Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset , transform.position.y, 0),
-            //Quaternion.identity);
+        // Card deltCard =  Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset , transform.position.y, 0),
+        //Quaternion.identity);
         //deltCard.transform.SetParent(_cavas);
-        
+
         int secrand = Random.Range(0, ai_hand.Count);
         ai_chosen = ai_hand[secrand];
         print(ai_chosen.name);
         ai_hand.RemoveAt(secrand);
-        Card dealtCard = Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset, transform.position.y, 0), Quaternion.identity);
+        Card dealtCard = Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset, transform.position.y, 0),
+            Quaternion.identity);
         dealtCard.transform.SetParent(_canvas.transform);
+
+        if (ai_chosen.name == ("Shield card"))
+        {
+            aiplayshieldcard = true;
+            print(aiplayshieldcard);
+        }
+
+        if (ai_chosen.name == ("Sword card"))
+        {
+            if (combat = true)
+            {
+                hud.health = hud.health - 2;
+            }
+        }
+
+        if (ai_chosen.name == ("Heart card"))
+        {
+            hud.aihealth = hud.aihealth + 1; 
+        }
+        
+        if (aiplayshieldcard == true)
+        {
+            
+        }
+        
     }
 
-    /*
-    private void SelectAndMoveRandomElement()
+    /*void Aitakedamage()
     {
-        for (int i = 0; i < 3; i++)
+        if (aiplayshieldcard == false);
         {
-            int rand = Random.Range(0, player_deck.Count);
-            player_hand[i] = player_deck[rand];
-            player_deck.RemoveAt(rand);
+            hud.aihealth = hud.aihealth - 2;
+            print(hud.aihealth);
         }
     }
-     // The code gave an error
     */
-    
-    
-    
 }
+
