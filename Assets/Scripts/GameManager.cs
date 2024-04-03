@@ -201,6 +201,11 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
         
     }
 
+    void Ending_turn()
+    {
+        //ai_hand.RemoveAt();
+        
+    }
     /*void Aitakedamage()
     {
         if (aiplayshieldcard == false);
