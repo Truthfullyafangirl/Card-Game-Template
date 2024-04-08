@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     public float card_size;
     public Transform _canvas;
     public float xOffset;
-    
+    private bool Delay;
+    public bool startTimer = false;
+    private float DelayTimer;
     public CardHud hud;
 //<<<<<<< HEAD
     public bool playshieldcard; 
@@ -50,6 +52,9 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
     
     void Start()
     {
+        Delay = false;
+        DelayTimer = 1f;
+        
         hud = GameObject.FindObjectOfType<CardHud>();
         card_size = 100;
         hud.health = 10;
@@ -118,6 +123,17 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                 }
             }
         }
+
+        if (startTimer)
+        {
+            DelayTimer -= Time.deltaTime;
+            if (DelayTimer < 0)
+            {
+                Ending_turn();
+                startTimer = false;
+                DelayTimer = 1;
+            }
+        }
     }
     
     public void OnPointerClick(PointerEventData eventData)
@@ -127,10 +143,14 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
     void Deal()
     {
+        Delay = false;
+        DelayTimer = 1f;
+        
+        
         for (int i = 0; i < 3; i++)
         {
             int rand = Random.Range(0, ai_deck.Count);
-            ai_hand[i] = ai_deck[rand];
+            ai_hand[i] = ai_deck[rand]; 
             ai_deck.RemoveAt(rand);
             
         }
@@ -169,7 +189,11 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
         int secrand = Random.Range(0, ai_hand.Count);
         ai_chosen = ai_hand[secrand];
+        //start the timer, both cards have been selected
+        startTimer = true;
+        
         print(ai_chosen.name);
+        
         ai_hand.RemoveAt(secrand);
         Card dealtCard = Instantiate(ai_chosen, new Vector3(transform.position.x + xOffset, transform.position.y, 0),
             Quaternion.identity);
@@ -196,24 +220,22 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
         
         if (aiplayshieldcard == true)
         {
-            
+            //if (aicombat == )
+            {
+                
+            }
         }
         
     }
 
     void Ending_turn()
     {
-        //ai_hand.RemoveAt();
-        
-    }
-    /*void Aitakedamage()
-    {
-        if (aiplayshieldcard == false);
+        for (int i = ai_hand.Count; i<0; i--)
         {
-            hud.aihealth = hud.aihealth - 2;
-            print(hud.aihealth);
+            //player_hand[i]
         }
+        //mr ansell has no idea what goes here
+        //ai_hand.RemoveAt();
     }
-    */
 }
 
