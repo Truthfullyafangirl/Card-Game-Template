@@ -230,9 +230,15 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
 
     void Ending_turn()
     {
+        for (int i = player_hand.Count; i<0; i--)
+        {
+            player_deck.Add(player_hand[i]);
+            player_hand.RemoveAt(i);
+        }
         for (int i = ai_hand.Count; i<0; i--)
         {
-            //player_hand[i]
+            ai_deck.Add(ai_hand[i]);
+            ai_hand.RemoveAt(i);
         }
         //mr ansell has no idea what goes here
         //ai_hand.RemoveAt();
