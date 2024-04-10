@@ -497,11 +497,11 @@ MonoBehaviour:
   card_size: 50
   _canvas: {fileID: 0}
   xOffset: 0
-  health: 0
+  startTimer: 0
   hud: {fileID: 0}
-  aihealth: 0
   playshieldcard: 0
   aiplayshieldcard: 0
+  aicombat: 0
   combat: 0
 --- !u!4 &598229453
 Transform:
@@ -693,11 +693,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bd3a280bcfb4f02a707081fc716441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ai_Health: 0
+  aihealth: 0
   health: 0
   HealthText: {fileID: 2034446078}
   Ai_HealthText: {fileID: 0}
---- !u!1 &1204140118
+--- !u!1 &1213632503
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -705,22 +705,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1204140120}
-  - component: {fileID: 1204140119}
+  - component: {fileID: 1213632505}
+  - component: {fileID: 1213632504}
   m_Layer: 0
-  m_Name: Image without mist
+  m_Name: Night-Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &1204140119
+--- !u!212 &1213632504
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204140118}
+  m_GameObject: {fileID: 1213632503}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -755,7 +755,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5494f7eba42c441e299ab5fb9c73477a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1204d7144f35e458ba75836107591215, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -766,17 +766,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1204140120
+--- !u!4 &1213632505
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204140118}
+  m_GameObject: {fileID: 1213632503}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.52, y: -0.9, z: 0}
-  m_LocalScale: {x: 3.37, y: 3.37, z: 3.37}
+  m_LocalPosition: {x: 0.58, y: -0.84, z: 0}
+  m_LocalScale: {x: 3.28, y: 3.28, z: 3.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1209,4 +1209,4 @@ SceneRoots:
   - {fileID: 4002591297304670402}
   - {fileID: 598229453}
   - {fileID: 370633753}
-  - {fileID: 1204140120}
+  - {fileID: 1213632505}
