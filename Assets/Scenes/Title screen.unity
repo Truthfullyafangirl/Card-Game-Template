@@ -180,9 +180,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "How to play: There are three types of cards. The heart, aka health, the
-    sword, aka attack, and the shield, aka defend. \nYou will be given options for
-    which you want to play, click to choose.\n"
+  m_text: 'How to play: There are three cards. The heart, aka heal, the sword, aka
+    attack, and the shield, aka defend. You will be given options for which to play,
+    click to choose.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -354,6 +356,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 967982828}
+  - {fileID: 1943523900}
   - {fileID: 7409759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -829,11 +832,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 115253894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 420.5, y: 177.5}
+  m_AnchoredPosition: {x: 46.75, y: -66}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1943523901
@@ -1025,5 +1028,4 @@ SceneRoots:
   - {fileID: 1942266536}
   - {fileID: 115253894}
   - {fileID: 952480452}
-  - {fileID: 1943523900}
   - {fileID: 2139842868}
