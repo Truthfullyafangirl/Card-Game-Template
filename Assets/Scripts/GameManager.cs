@@ -240,6 +240,9 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             ai_deck.Add(ai_hand[i]);
             ai_hand.RemoveAt(i);
         }
+        aicombat = true; 
+        aiplayshieldcard = false; 
+        Shuffle();
         //mr ansell has no idea what goes here
         //ai_hand.RemoveAt();
     }
