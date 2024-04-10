@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 using UnityEngine.UI; 
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour , IPointerClickHandler 
 {
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
        
         // SelectAndMoveRandomElement();
         // The code gave an error
-        aicombat = true; 
+        aicombat = false; 
         aiplayshieldcard = false; 
     }
 
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                     if (go.gameObject.transform.parent.name == "Heart card(Clone)" && go.gameObject.name == "Background")
                     {
                         hud.health += 1; 
+                        aicombat = false;
                         AI_Turn();
                         print(hud.health);
                     }
@@ -101,12 +103,12 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                     if (go.gameObject.transform.parent.name == "Shield card(Clone)" && go.gameObject.name == "Background")
                     {
                         combat = false; 
+                        aicombat = false;
                         AI_Turn();
                     }
                     
                     if (go.gameObject.transform.parent.name == "Sword card(Clone)" && go.gameObject.name == "Background")
                     {
-                        
                         if (aiplayshieldcard == false)
                         {
                             hud.aihealth = hud.aihealth - 2; 
@@ -114,9 +116,9 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                             print(hud.aihealth);
                         }
                         
+                        aicombat = false;
                         AI_Turn();
                         Debug.Log(hud.aihealth);
-                        
                     }
                     
                     Debug.Log(go.gameObject.transform.parent.name);
@@ -133,6 +135,16 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
                 startTimer = false;
                 DelayTimer = 1;
             }
+        }
+
+        if (hud.aihealth == 0)
+        {
+            SceneManager.LoadScene("You win");
+        }
+        
+        if (hud.health == 0)
+        {
+            SceneManager.LoadScene("You lost");
         }
     }
     
@@ -217,15 +229,6 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
         {
             hud.aihealth = hud.aihealth + 1; 
         }
-        
-        if (aiplayshieldcard == true)
-        {
-            //if (aicombat == )
-            {
-                
-            }
-        }
-        
     }
 
     void Ending_turn()
