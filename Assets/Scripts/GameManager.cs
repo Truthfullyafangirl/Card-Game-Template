@@ -238,11 +238,20 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             player_deck.Add(player_hand[i]);
             player_hand.RemoveAt(i);
         }
+        
         for (int i = ai_hand.Count; i<0; i--)
         {
             ai_deck.Add(ai_hand[i]);
             ai_hand.RemoveAt(i);
         }
+        
+        /*for (int i = ai_chosen.Count; i<0; i--)
+        {
+            ai_deck.Add(ai_chosen[i]);
+            ai_chosen.RemoveAt(i);
+        } Workin on it */
+        
+        
         aicombat = true; 
         aiplayshieldcard = false; 
         Shuffle();
