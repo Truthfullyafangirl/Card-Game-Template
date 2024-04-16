@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour , IPointerClickHandler
             ai_deck.Add(ai_chosen[i]);
             ai_chosen.RemoveAt(i);
         } Workin on it */
-        
+       
         
         aicombat = true; 
         aiplayshieldcard = false; 
